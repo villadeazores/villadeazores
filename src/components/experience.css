@@ -1,0 +1,28 @@
+/* Scoped styles for the interactive slider to prevent conflicts */
+.is-container {
+  --is-primary: #6b7a8f;
+  --is-secondary: #101118;
+  --is-accent: #1d1f2f;
+  --is-focus: #6d64f7;
+  --is-duration: 600ms;
+  --is-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+
+/* Animation for content fade-in */
+@keyframes is-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.is-content.is-active {
+  animation: is-fade-in calc(var(--is-duration) / 2) var(--is-ease) forwards;
+}
+
+/* Ensure proper stacking context */
+.is-slide {
+  isolation: isolate;
+}
